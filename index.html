@@ -6,8 +6,29 @@
         </head>
         <body> 
             <a-scene>
-                 <a-plane
-                  color="forestgreen"
+
+                <a-assets>
+                    <img id="grass-base" src="assets\Grass_061_Color.pog">
+                     <img id="grass-ambient-occlusion" src="assets\Grass_061_OCC.pog">
+                     <img id="grass-normal" src="assets\Grass_061_Normal.pog">
+                     <img id="sphericaltreeleaves-base" src="assets\stylized_leaves_001_baseColor.pog">
+                     <img id="sphericaltreeleaves-ambient-occlusion" src="assets\stylized_leaves_001_AmbientOcclusion.jpg">
+                     <img id="sphericaltreeleaves-normal" src="assets\stylized_061_Normal.jpg">
+                     <img id="conicaltreeleaves-base" src="assets\Stylized_Leaves_002_basecolor.jpg">
+                     <img id="conicaltreeleaves-ambient-occlusion" src="assets\Stylized_Leaves_002_ambientOcclu sion.jpg">
+                     <img id="conicaltreeleaves-normal" src="assets\Stylized_Leaves_002_normal.jpg">
+                     <img id="treetrunk-base" src="assets\Bark_06_basecolor.jpg">
+                     <img id="treetrunk-ambient-occlusion" src="assets\Bark_06_ambientOcclusion.jpg">
+                     <img id="treetrunk-normal" src="assets\Bark_06_normal.jpg">
+                </a-assets>
+                
+                <a-plane
+                 material= "src: #grass-base;
+                  repeat: 500 500;
+                   ambientOcclusionMap: #grass-ambient-occlusion;
+                    ambientOcclusionTextureRepeat: 500 500;
+                     normalMap: #grass-normal;
+                      normalTextureRepeat: 500 500"
                    position="0 0 0" 
                    rotation="-90 0 0"
                     width="500" 
@@ -29,7 +50,8 @@
                     width="10"
                     height="3"
                     depth="0.1"
-                    ></a-box>
+                    >
+                </a-box>
                     <a-box
                     mixin="wallcolor"
                     position="-5 1.5 -11"
@@ -48,9 +70,10 @@
                 depth="0.1"
                 >
             </a-box>
+            
 
-            <a-
-            mixinid="wallcolor"
+            <a-mixin
+            id="wallcolor"
             color="lightsteelblue"
             ></a-mixin>
             <a-box
@@ -100,7 +123,12 @@
         
         <a-mixin
         id="treetrunk"
-        color="saddlebrown"
+        material = "src: #treetrunk-base;
+         repeat: 3 5; ambientOcclusionMap:
+          #treetrunk-ambient-occlusion;
+           ambientOcclusionTextureRepeat: 3 5; 
+           normalMap: #treetrunk-normal;
+            normalTextureRepeat: 3 5"
         geometry="radius:0.2;height:3"
          >
         </a-mixin>
@@ -145,7 +173,14 @@ position="4 1 -2"
 
 <a-mixin
 id="sphericaltreeleaves"
-color="green"
+material = "src: #sphericaltreeleaves-base;
+ repeat: 8 8;
+  ambientOcclusionMap: 
+  #sphericaltreeleaves-ambient- 
+     occlusion; 
+     ambientOcclusionTextureRepeat: 8 8;
+      normalMap: #sphericaltreeleaves-normal;
+       normalTextureRepeat: 8 8;"
 geometry="radius:1"
 >
 </a-mixin>
@@ -160,4 +195,34 @@ mixin="sphericaltreeleaves"
 position="8 2 -6"
 >
 </a-sphere>
-            </html>
+
+<a-box
+mixin="wallcolor"
+position="-2.875 1.5 -6"
+rotation="0 0 0"
+width="4.25"
+height="3"
+depth="0.1"
+>
+</a-box>
+<a-box
+mixin="wallcolor"
+position="2.875 1.5 -6"
+rotation="0 0 0"
+width="4.25"
+height="3"
+depth="0.1"
+>
+</a-box>
+<a-box
+mixin="wallcolor"
+position="0 2.75 -6"
+rotation="0 0 0"
+width="1.5"
+height="0.5"
+depth="0.1"
+>
+</a-box>
+</a-scene>
+</body>
+</html>
